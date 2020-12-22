@@ -1,0 +1,9 @@
+{
+    "token": "your token", 
+    "cooldown": "a cooldown in seconds", 
+    "bot_name": "the name you chose for the bot" ,
+    "twitter": {
+        "twitterAccount": "a twitter account ID", "guildID": "A guild ID where you want to send each tweets", "channelID": "A channel ID in the previously entered guild where the tweets will be sent."
+    }
+    }
+    
