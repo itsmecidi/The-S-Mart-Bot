@@ -7,7 +7,7 @@ module.exports = {
   description: "Unban un utilisateur (!unban userID)",
   async execute(message, args, client) {
     if (message.member.hasPermission('BAN_MEMBERS') || message.author.id === '480692379913945099') {
-      let embed = new MessageEmbed().setFooter(`NovaBot • Executed by ${message.author.username}`).setTimestamp().setColor('ff0000');
+      let embed = new MessageEmbed().setFooter(`${client.config.bot_name} • Executed by ${message.author.username}`).setTimestamp().setColor('ff0000');
       let user = args[0]
       if (user.startsWith('<@!')) return message.channel.send(embed.setTitle("Do not mention users. Please provide their ID"))
       tempOrPerm = []

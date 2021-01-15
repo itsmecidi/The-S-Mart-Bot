@@ -23,17 +23,14 @@ module.exports = {
         
 
 
-        let muteRole = message.guild.roles.cache.find(role => role.name === 'Muted')
-
-        if (!muteRole) {
-
-            message.channel.send("Aucun rôle avec le nom \"Muted\" n'a été trouvé, par conséquent, l'utilisateur ne pourra être unmute.")
-            if (!memberToUnmute.manageable) return message.channel.send('❌Failed to unmute this user. Please check my permissions.')
-        } else {
-            if (!memberToUnmute.roles.cache.some(role => role.name == 'Muted')) return message.channel.send('This user isn\'t muted.')
-            if (!memberToUnmute.manageable) return message.channel.send('❌Failed to unmute this user. Please check my permissions.')
-            memberToUnmute.roles.remove(muteRole)
-            message.channel.send(`\`${memberToUnmute.user.tag}\` has been unmuted by \`${message.author.tag}\``)
+        let muteRole = message.guild.roles.cache.find(role => role.name === 'Muted');
+        if (!memberToUnmute.manageable) return message.channel.send('❌Failed to unmute this user. Please check my permissions.');
+        if (!muteRole) message.channel.send("I can't seem to find a \"Muted\" role. I won't be able to mute this user.");
+       
+            if (!memberToUnmute.roles.cache.some(role => role.name == 'Muted')) return message.channel.send('This user isn\'t muted.');
+           
+            memberToUnmute.roles.remove(muteRole);
+            message.channel.send(`\`${memberToUnmute.user.tag}\` has been unmuted by \`${message.author.tag}\``);
             if (client.setup.has(message.guild.id) && client.setup.has(message.guild.id, 'modlogChannelID')) {
                 client.channels.fetch(client.setup.get(message.guild.id, 'modlogChannelID')).then((channel) => {
                     let embedLog = new MessageEmbed()
@@ -48,9 +45,5 @@ module.exports = {
                 })
 
             }
-        }
-
-
-        // la commande finit ici
-    },
+        }  
 };

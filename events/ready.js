@@ -133,7 +133,7 @@ module.exports = client => {
 
     }, 360000);
 
-    client.user.setActivity(`${client.guilds.cache.size} servers...`, {
+    client.user.setActivity('🏆 SoClose 🏆', {
         type: 'WATCHING'
     });
 

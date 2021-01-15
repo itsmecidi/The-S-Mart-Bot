@@ -20,37 +20,6 @@ client.config = config
 client.commands = new Collection();
 Object.assign(client, Enmap.multi(["setup", "moderation", "points"]));
 
-let isReply = (tweet)=> {
-    if (tweet.retweeted_status
-      || tweet.in_reply_to_status_id
-      || tweet.in_reply_to_status_id_str
-      || tweet.in_reply_to_user_id
-      || tweet.in_reply_to_user_id_str
-      || tweet.in_reply_to_screen_name) return true;
-    return false;
-  }
-const twitterConf = { //complete this with your tokens, ids.
-    consumer_key: '',
-    consumer_secret: '',
-    access_token: '',
-    access_token_secret: '',
-  }
-const twitterClient = new Twitter(twitterConf);
-
-const stream = twitterClient.stream('statuses/filter', {
-  follow: client.config.twitter.twitterAccount, // @Every3Minutes, specify whichever Twitter ID you want to follow
-});
-
-stream.on('tweet', tweet => {
-    if(isReply(tweet) == false) {
-  const twitterMessage = `New tweet from @${tweet.user.screen_name}: https://twitter.com/${tweet.user.screen_name}/status/${tweet.id_str}`
-  client.guilds.cache.get(client.config.twitter.guildID).channels.cache.get(client.config.twitter.channelID).send(twitterMessage)
-  return false;
-    }
-    else return
-});
-
-
 
 
 
