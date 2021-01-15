@@ -9,10 +9,10 @@ module.exports = {
     description: "Affiche toutes les sanctions d'un utilisateur (!punishments user)",
     cooldown: cooldown,
     async execute(message, args, client) {
-        let embed = new MessageEmbed().setFooter(`NovaBot • Executed by ${message.author.username}`).setTimestamp();
+        let embed = new MessageEmbed().setFooter(`${client.config.bot_name} • Executed by ${message.author.username}`).setTimestamp();
         if (message.member.hasPermission('KICK_MEMBERS') || message.author.id === '480692379913945099') {
             let user = message.mentions.members.first() || message.guild.members.cache.get(args[0]);
-            embedNoPunishments = new MessageEmbed().setTitle('No sanctions').setColor('ff0000').setFooter(`NovaBot • Executed by ${message.author.tag}`);
+            embedNoPunishments = new MessageEmbed().setTitle('No sanctions').setColor('ff0000').setFooter(`${client.config.bot_name} • Executed by ${message.author.tag}`);
             if (!user) {
                 message.channel.send(client.embedMention)
                 return;

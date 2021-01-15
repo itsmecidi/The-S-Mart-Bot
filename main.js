@@ -18,7 +18,7 @@ const client = new Client({
 });
 client.config = config
 client.commands = new Collection();
-Object.assign(client, Enmap.multi(["setup", "moderation", "points"]));
+Object.assign(client, Enmap.multi(["setup", "moderation"]));
 
 
 

@@ -38,7 +38,7 @@ module.exports = {
             if (user.bannable) {
                 await message.channel.send(`User banned with the reason: ${bReason}`)
                 try {
-                    await user.send(embed.setFooter(`NovaBot • Executed by ${message.author.username}`)
+                    await user.send(embed.setFooter(`${client.config.bot_name} • Executed by ${message.author.username}`)
                         .setTimestamp()
                         .setAuthor(`${message.author.tag}`, message.author.avatarURL())
                         .setTitle(`Temp ban: ${banTime}`)
@@ -69,7 +69,7 @@ module.exports = {
                 }
                 await user.ban()
             } else {
-                message.channel.send(embed.setTitle('❌Impossible de bannir cet utilisateur, vérifiez mes permissions.').setColor('ff0000'))
+                message.channel.send(embed.setTitle('❌ I can\'t ban this user, please check my permissions').setColor('ff0000'))
             }
         }
     }

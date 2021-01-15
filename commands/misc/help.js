@@ -9,7 +9,7 @@ module.exports = {
     async execute(message, args, client) {
        message.channel.send(new MessageEmbed()
     .setDescription('🔥 Here\'s a list of every commands')
-    .setFooter('NovaBot', client.user.displayAvatarURL())
+    .setFooter(client.config.bot_name, client.user.displayAvatarURL())
      .setTitle('List of commands')
      .setTimestamp()
      .addField('\u200b',`**ban**\n\`!ban @member reason\`\n\n**unban**\n\`!unban memberID\`\n\n**tempban**\n\`!tempban @member duration reason\`\n\n**mute**\n\`!mute @member reason\`\n\n**tempmute**\n\`!tempmute @member duration reason\`\n\n**unmute**\n\`!unmute @member\`\n\n` ,true)

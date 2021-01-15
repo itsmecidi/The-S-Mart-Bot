@@ -34,7 +34,7 @@ module.exports = {
                 `bannedUsers.${user.id}`)
             if (user.bannable) {
                 await message.channel.send(embedbl
-                    .setTitle(`✅User banned.`).setColor('ff0000'))
+                    .setTitle(`✅ User banned.`).setColor('ff0000'))
 
                 try {
                     await user.send(embedbl.addField(`You have been permanently banned from ${message.guild.name}`, '\u200b', true).addField(`\`reason:\` ${bReason}\``, `author:\` ${message.author.username}`, true))

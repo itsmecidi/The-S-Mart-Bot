@@ -9,7 +9,7 @@ module.exports = {
     async execute(message, args, client) {
         if ((message.member.hasPermission('BAN_MEMBERS') || message.member.hasPermission('KICK_MEMBERS')) || message.author.id === '480692379913945099') {
             let user = message.mentions.members.first() || message.guild.members.cache.get(args[0]);
-            embed = new MessageEmbed().setColor('ff0000').setFooter(`NovaBot • Executed by ${message.author.username}`).setTimestamp();
+            embed = new MessageEmbed().setColor('ff0000').setFooter(`${client.config.bot_name} • Executed by ${message.author.username}`).setTimestamp();
             if (!user) {
                 message.channel.send(client.embedMention)
                 return;

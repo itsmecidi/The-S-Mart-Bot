@@ -1,7 +1,7 @@
 //USE THIS ONLY IF USING PM2
 module.exports = {
     apps : [{
-      name        : "Bot",
+      name        : "SoClose",
       script      : "./main.js",
       watch       : true,
       ignore_watch: ["./data", "node_modules", "./logs"],

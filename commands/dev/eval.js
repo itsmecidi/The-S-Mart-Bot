@@ -3,7 +3,7 @@ const { MessageEmbed } = require('discord.js')
 module.exports = {
     name: 'eval',
     async execute(message, args, client) {
-        let embed = new MessageEmbed
+        let embed = new MessageEmbed().setColor('GREEN')
         // Put your userID here
         if (message.author.id !== '480692379913945099') return;
         const clean = text => {
@@ -36,7 +36,7 @@ module.exports = {
                 .setDescription(`**Output**\n\`\`\`js\n${clean(evaled)}\n\`\`\``))
            
         } catch (err) {
-            message.channel.send(`\`ERROR\` \`\`\`xl\n${clean(err)}\n\`\`\``);
+            message.channel.send(embed.setAuthor('Eval ERROR').addField('Input',`\`\`\`js\n${code}\`\`\``).setDescription(`\`ERROR\` \`\`\`xl\n${clean(err)}\n\`\`\``)).setColor('#ff0000');
         }
 
     }

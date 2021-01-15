@@ -13,7 +13,7 @@ module.exports = {
                 message.channel.send(client.embedMention)
                 return;
             }
-                embed = new MessageEmbed().setColor('00ff00').setFooter(`NovaBot • Executé par ${message.author.username}`).setTimestamp();
+                embed = new MessageEmbed().setColor('00ff00').setFooter(`${client.config.bot_name} • Executé par ${message.author.username}`).setTimestamp();
                 const caseID = parseInt(args[1])
                 console.log(caseID)
                 if (client.moderation.has(message.guild.id) && !client.moderation.has(message.guild.id, `punishments.${user.id}.X${caseID}`) || (!client.moderation.has(message.guild.id) && !client.moderation.has(message.guild.id, `punishments.${user.id}.X${caseID}`))) return message.channel.send(embed.setColor('ff0000').setTitle("❌Failed to find that sanction\nVerify the ID (number) of the sanction."))
