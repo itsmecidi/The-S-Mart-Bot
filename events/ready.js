@@ -133,7 +133,7 @@ module.exports = client => {
 
     }, 360000);
 
-    client.user.setActivity('🏆 SoClose 🏆', {
+    client.user.setActivity(`🏆 ${client.config.bot_name} 🏆`, {
         type: 'WATCHING'
     });
 

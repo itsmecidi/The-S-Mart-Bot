@@ -10,6 +10,8 @@ module.exports = async (client, reaction, user) => {
                 console.log('Something went wrong when fetching the message: ', error);
             });
     }
+    if(!reaction.message.guild) return;
+    if(!reaction.message.guild.me) return;
     if (reaction.message.guild.me.hasPermission('MANAGE_ROLES')) {
 
     

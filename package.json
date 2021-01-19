@@ -1,5 +1,5 @@
 {
-  "name": "SoClose",
+  "name": "pending",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -13,6 +13,7 @@
     "axios": "^0.20.0",
     "discord.js": "^12.4.0",
     "enmap": "^5.8.0",
+    "godembed": "^1.0.4",
     "humanize-duration": "^3.23.1",
     "leekslazylogger": "^2.0.3",
     "parse-duration": "^0.4.4",
