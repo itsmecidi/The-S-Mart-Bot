@@ -48,9 +48,9 @@ module.exports = {
                         message.author.send(new MessageEmbed()
                             .setTimestamp()
                             .setFooter(client.user.username, client.user.displayAvatarURL())
-                            .setTitle(':pushpin: __**Please select a channel(s) for your post :**__')
-                            .addfield('__**What to do now ?**__','<:Arrow:778967880230109185> Choose the channel(s) where your post will be publish !!!\n<:Arrow:778967880230109185> You can select up to **3** channels !!!\n<:Arrow:778967880230109185> If more then one channel separate each number with an `,` *Eg :* `1,2,3`'false)
-                            .addfield('__**Careful :**__','<:Warning:778967970394406932> Please choose the **appropriate** channel for your post. *For example : No clothes in Sneakers Deli !!!*'false)               
+                            .setTitle(':pushpin: __**Please select a Channel(s) for your post :**__')
+                            .addfield('__**What to do now ?**__','<:Arrow:778967880230109185> Please, **select** the channel(s) where your post will be publish !!!\n<:Arrow:778967880230109185> You can select up to **3** channels !!!\n<:Arrow:778967880230109185> If more then one channel separate each number with an `,` *Eg :* `1,4,9`'false)
+                            .addfield('__**Careful :**__','<:Warning:778967970394406932> Please **select** the **appropriate** channel for your post. *For example : No clothes in Sneakers Deli !!!*'false)               
                             .addfield('__**Fresh Drop Grocery 🍉**__','soon'true)
                             .addfield('__**Sneakers Deli 🍔**__','1. <#797170482976784394>\n2.<#797170634093232168>\n3. <#797170557597646848>\n4. <#795374898004230195\n5. <#795375038790238228>'true)
                             .addfield('__**Supreme-Eleven 🏪**__','6. <#796460312093130783>'true)
@@ -132,9 +132,9 @@ module.exports = {
                                         .setFooter(client.user.username, client.user.displayAvatarURL())
                                         .setTitle(':flag_eu: __**What is your Location ?**__')
                                         .addauthor('Step 2 :')
-                                        .addfield('__**What to do now ?**__','<:Arrow:778967880230109185> Select your location in the following list :\n<:Arrow:778967880230109185> Your location informs other users that you might be close to them !!!'false)                      
-                                        .addfield('__**Notes :**__','<a:Verified1:778656791332257813> Location increase the chance of possible Meet-Up, and save some fees :wink:\n<a:Verified1:778656791332257813> Your post will **also** automatically be published in #Close to me 🔍'false)                      
-                                        .setdescription('Need some <:Help:778973470792876032>, come open a ticket in <#778302895526903818>')                     
+                                        .addfield('__**What to do now ?**__','<:Arrow:778967880230109185> Please, **select** your location in the following list :\n<:Arrow:778967880230109185> Your location informs other users that you might be close to them !!!\n<:example:801551839703072768> *For example you can enter : `1 or 2 or 3 …`*'false)                      
+                                        .addfield('__**Notes :**__','<a:Verified1:778656791332257813> Location **increase** the chance of possible Meet-Up, and save some fees :wink:\n<a:Verified1:778656791332257813> Your post will **also** automatically be published in #Close to me 🔍'false)                      
+                                        .setdescription('Need some <:Help:778973470792876032>, come open a ticket in <#778302895526903818>\n** ** ** **')                     
                                         ).then(async () => {
                                         message.author.dmChannel.awaitMessages(filter, {
                                                 max: 1,
@@ -147,10 +147,10 @@ module.exports = {
                                                         .setTimestamp()
                                                         .setFooter(client.user.username, client.user.displayAvatarURL())
                                                         .addauthor('Step 3 :')
-                                                        .addfield('__**What to do now ?**__','<:Arrow:778967880230109185> React with <:Check:778698838521282612> if you accept Meet-Up !!!\n<:Arrow:778967880230109185> React with <:x_:778698838898507806> if you refuse Meet-Up !!!'false)
-                                                        .addfield('__**Note :**__','<a:Verified1:778656791332257813> We highly recommend that you specify your city for potential Meet-Up to increase your chance of selling/buying !!!'false)                      
-                                                        .adddescription('Need some <:Help:778973470792876032>, come open a ticket in <#778302895526903818>')
-                                                        .setTitle(':city_dusk: __**Do you want to specify your city ?**__ ')).then(async () => {
+                                                        .addfield('__**What to do now ?**__','<:Arrow:778967880230109185> Please, **react** with <:Check:778698838521282612> if you accept Meet-Ups !!!\n<:Arrow:778967880230109185> React with <:x_:778698838898507806> if you refuse Meet-Ups !!!'false)
+                                                        .addfield('__**Note :**__','<a:Verified1:778656791332257813> We highly **recommend** that you specify your city for potential Meet-Ups to **increase** your chance of selling/buying !!!'false)                      
+                                                        .adddescription('Need some <:Help:778973470792876032>, come open a ticket in <#778302895526903818>\n** ** ** **')
+                                                        .setTitle(':city_dusk: __**Do you want to specify your City ?**__ ')).then(async () => {
                                                         message.author.dmChannel.awaitMessages(filter, {
                                                                 max: 1,
                                                                 time: 300000,
@@ -163,9 +163,9 @@ module.exports = {
                                                                         .setTimestamp()
                                                                         .setFooter(client.user.username, client.user.displayAvatarURL())
                                                                         .addauthor('Step 3 :')                      
-                                                                        .addfield('__**What to do now ?**__','<:Arrow:778967880230109185> Type your city/nearest city :\n<:Arrow:778967880230109185> All other users will be able to see in which city you prefer to Meet-Up <a:party:795264786849595422>'false)
-                                                                        .adddescription('Need some <:Help:778973470792876032>, come open a ticket in <#778302895526903818>')                 
-                                                                        .setTitle(':cityscape: __**Which city or nearest city you want to Meet-Up ?**__')).then(async () => {
+                                                                        .addfield('__**What to do now ?**__','<:Arrow:778967880230109185> Please, **enter** your city/nearest city :\n<:Arrow:778967880230109185> All other users will be able to see in which city you prefer to Meet-Up <a:party:795264786849595422>\n<:example:801551839703072768> *For example you can enter : `Paris`/`Paris 4eme`*'false)
+                                                                        .adddescription('Need some <:Help:778973470792876032>, come open a ticket in <#778302895526903818>\n** ** ** **')                 
+                                                                        .setTitle(':cityscape: __**Which City or nearest city you want to Meet-Up ?**__')).then(async () => {
                                                                         await message.author.dmChannel.awaitMessages(filter, {
                                                                                 max: 1,
                                                                                 time: 300000,
@@ -182,9 +182,9 @@ module.exports = {
                                                                     .setTimestamp()
                                                                     .setFooter(client.user.username, client.user.displayAvatarURL())
                                                                     .addauthor('Step 4 :')
-                                                                    .setTitle('<:cargo:801212710377095168> __**Do you buy in Bulk ?**__')
+                                                                    .setTitle('<:cargo:801212710377095168> __**Do you Buy in Bulk ?**__')
                                                                     .addfield('__**What to do now ?**__','<:Arrow:778967880230109185> Are you buying in quantity ?\n<:Check:778698838521282612> Yes\n<:x_:778698838898507806> No'false)
-                                                                    .setDescription('Need some <:Help:778973470792876032>, come open a ticket in <#778302895526903818>')
+                                                                    .setDescription('Need some <:Help:778973470792876032>, come open a ticket in <#778302895526903818>\n** ** ** **')
                                                                 ).then(async firstQuestion => {
                                                                     await firstQuestion.react('<:Check:778698838521282612>')
 
@@ -217,9 +217,9 @@ module.exports = {
                                                                                 .setTimestamp()
                                                                                 .setFooter(client.user.username, client.user.displayAvatarURL())
                                                                                 .addauthor('Step 5 :')
-                                                                                .setTitle('<:cash:782230505356787752> __**Is your price firm ?**__')
+                                                                                .setTitle('<:cash:782230505356787752> __**Is your Price Firm ?**__')
                                                                                 .addfield('__**What to do now ?**__','<:Arrow:778967880230109185> Are you flexible with your price :\n<:Check:778698838521282612> Yes\n<:x_:778698838898507806> No'false)
-                                                                                .setDescription('Need some <:Help:778973470792876032>, come open a ticket in <#778302895526903818>')
+                                                                                .setDescription('Need some <:Help:778973470792876032>, come open a ticket in <#778302895526903818>\n** ** ** **')
                                                                             ).then(async secondQuestion => {
                                                                                 await secondQuestion.react('<:Check:778698838521282612>')
 
@@ -251,11 +251,11 @@ module.exports = {
                                                                                             .setTimestamp()
                                                                                             .setFooter(client.user.username, client.user.displayAvatarURL())
                                                                                             .addauthor('Step 6 :')
-                                                                                            .addfield('__**What to do now ?**__','<:Arrow:778967880230109185> Please paste your <:Twitter:780761305459720202>/<:insta:792445530986119238/<:fb:780854030422769705> **link** to your Legit Check post !!!'false)
+                                                                                            .addfield('__**What to do now ?**__','<:Arrow:778967880230109185> Please, **paste** your <:Twitter:780761305459720202>/<:insta:792445530986119238/<:fb:780854030422769705> **link** to your Legit Check post !!!\n<:example:801551839703072768> *For example you can paste : `https://twitter.com/itsmecidi/status/129…`*'false)
                                                                                             .addfield('__**Careful :**__',' <:Warning:778967970394406932> You can **only** post **one** link !!!'false)
-                                                                                            .addfield('__**Notes :**__','<a:Verified1:778656791332257813> Note that references increase tremendously the seriousness of your post !!!\n<a:Verified1:778656791332257813> We highly suggest that you to take the time to copy your link :wink:'false)                
-                                                                                            .adddescription('Need some <:Help:778973470792876032>, come open a ticket in <#778302895526903818>')               
-                                                                                            .setTitle('<:Refs:780745476387110913> __**Do you have references ?**__')).then(() => {
+                                                                                            .addfield('__**Notes :**__','<a:Verified1:778656791332257813> Note that references **increase** tremendously the seriousness of your post !!!\n<a:Verified1:778656791332257813> We highly suggest that you to take the time to copy your link :wink:'false)                
+                                                                                            .adddescription('Need some <:Help:778973470792876032>, come open a ticket in <#778302895526903818>\n** ** ** **')               
+                                                                                            .setTitle('<:Refs:780745476387110913> __**Do you have References ?**__')).then(() => {
                                                                                             message.author.dmChannel.awaitMessages(filter, {
                                                                                                     max: 1,
                                                                                                     time: 120000,
@@ -267,10 +267,10 @@ module.exports = {
                                                                                                         .setTimestamp()
                                                                                                         .setFooter(client.user.username, client.user.displayAvatarURL())
                                                                                                         .addauthor('Step 7 :')
-                                                                                                        .addfield('__**What to do now ?**__','<:Arrow:778967880230109185> Please type the amount of fees you are ready to pay !!!\n<:Arrow:778967880230109185> If you want the other part to pay the shipping fees, you can type `Seller/Buyer`'false)
-                                                                                                        .addfield('__**Careful :**__','<:Warning:778967970394406932> Fees are **only** in **euros €** or **pound £** !!!\n<:Warning:778967970394406932> Don’t forget to **specify** your **currency** !!!'false)
-                                                                                                        .adddescription('Need some <:Help:778973470792876032>, come open a ticket in <#778302895526903818>')
-                                                                                                        .setTitle(':package: __**How much shipping fees are you willing to pay ?**__')).then(async () => {
+                                                                                                        .addfield('__**What to do now ?**__','<:Arrow:778967880230109185> Please, **enter** the amount of fees you are ready to pay !!!\n<:Arrow:778967880230109185> If you want the other part to pay the shipping fees, you can enter `Seller/Buyer`\n<:icons8idee480:801551839703072768> *For example you can enter : `10€/Fr, 16€/EU, 20€/UK`*'false)
+                                                                                                        .addfield('__**Careful :**__','<:Warning:778967970394406932> Fees are **only** in Euros **€** :euro: or Pound **£** :pound: !!!\n<:Warning:778967970394406932> Don’t forget to **specify** your **currency** :globe_with_meridians: !!!'false)
+                                                                                                        .adddescription('Need some <:Help:778973470792876032>, come open a ticket in <#778302895526903818>\n** ** ** **')
+                                                                                                        .setTitle(':package: __**How much Shipping Fees are you willing to Pay ?**__')).then(async () => {
                                                                                                         message.author.dmChannel.awaitMessages(filter, {
                                                                                                                 max: 1,
                                                                                                                 time: 60000,
@@ -286,9 +286,9 @@ module.exports = {
                                                                                                                     .setTimestamp()
                                                                                                                     .setFooter(client.user.username, client.user.displayAvatarURL())
                                                                                                                     .addauthor('Step 8 :')
-                                                                                                                    .adddescription('Need some <:Help:778973470792876032>, come open a ticket in <#778302895526903818>')
-                                                                                                                    .addfield('__**What to do now ?**__','<:Arrow:778967880230109185> You can post up to 3 products in a WTB post !!!\n<:Arrow:778967880230109185> React with the number of product you WTB !!!\n<:One:778698839020142603> For one product !\n<:Two:778698838487728169> For two products !\<:Tree:778698838890250291> For three products !'false)                      
-                                                                                                                    .setTitle(':shopping_cart: __**Now, choose the number of product you want to buy ?**__')).then(async () => {
+                                                                                                                    .adddescription('Need some <:Help:778973470792876032>, come open a ticket in <#778302895526903818>\n** ** ** **')
+                                                                                                                    .addfield('__**What to do now ?**__','<:Arrow:778967880230109185> You can post up to 3 products in a WTB post !!!\n<:Arrow:778967880230109185> Please, **react** with the number of product you WTB !!!\n<:One:778698839020142603> For one product !\n<:Two:778698838487728169> For two products !\<:Tree:778698838890250291> For three products !'false)                      
+                                                                                                                    .setTitle(':shopping_cart: __**Now, choose the Number of Product you Want to Buy ?**__')).then(async () => {
                                                                                                                     message.author.dmChannel.awaitMessages(filter, {
                                                                                                                             max: 1,
                                                                                                                             time: 60000,
@@ -325,7 +325,10 @@ module.exports = {
                                                                                                                                 await message.author.send(new MessageEmbed()
                                                                                                                                     .setTimestamp()
                                                                                                                                     .setFooter(client.user.username, client.user.displayAvatarURL())
-                                                                                                                                    .setTitle('What is the name of the product you want.')).then(async () => {
+                                                                                                                                    .addfield('__**What to do now ?**__','<:Arrow:778967880230109185> Please, **enter** the title of your post !!!\n<:example:801551839703072768> *For example you can enter : `Box Logo Hoodie, FW16, Black, Size M`*'false)
+                                                                                                                                    .addfield('__**Notes :**__','<a:Verified1:778656791332257813> Your title **must** be concise, precise and clear for all users !!!\n<a:Verified1:778656791332257813> Don\'t be to specific, leave some for the description :wink:'false)
+                                                                                                                                    .addauthor('Product 1 :')
+                                                                                                                                    .setTitle(':placard: __**What is the Title of your Post ?**__')).then(async () => {
                                                                                                                                         await  message.author.dmChannel.awaitMessages(filter, {
                                                                                                                                             max: 1,
                                                                                                                                             time: 300000,
@@ -337,7 +340,10 @@ module.exports = {
                                                                                                                                            await message.author.send(new MessageEmbed()
                                                                                                                                                 .setTimestamp()
                                                                                                                                                 .setFooter(client.user.username, client.user.displayAvatarURL())
-                                                                                                                                                .setTitle('Please send the description of the product you want.')).then(async () => {
+                                                                                                                                                .addauthor('Product 1 :')
+                                                                                                                                                .addfield('__**What to do now ?**__','<:Arrow:778967880230109185> Please, briefly **describe** your product and it specificities !!!\n<:Arrow:778967880230109185> Specify the **color** and **mention** all it characteristics *Eg : damage box …\n<:example:801551839703072768> *For example you can enter : `Color : Black, still on it\’s original blister`*'false)
+                                                                                                                                                .addfield('__**Notes :**__','<a:Verified1:778656791332257813> Name all the characteristics that other users need to know about your product !!!'false)
+                                                                                                                                                .setTitle(':bookmark_tabs: __**Now it\’s time to Describe your Product :**__')).then(async () => {
                                                                                                                                                     await     message.author.dmChannel.awaitMessages(filter, {
                                                                                                                                                         max: 1,
                                                                                                                                                         time: 180000,
@@ -348,7 +354,10 @@ module.exports = {
                                                                                                                                                         await  message.author.send(new MessageEmbed()
                                                                                                                                                             .setTimestamp()
                                                                                                                                                             .setFooter(client.user.username, client.user.displayAvatarURL())
-                                                                                                                                                            .setTitle('Please send your US size.')).then(async () => {
+                                                                                                                                                            .addauthor('Product 1 :')
+                                                                                                                                                            .addfield('__**What to do now ?**__','<:Arrow:778967880230109185> Please, **enter** the size(s) you\'re looking for :\n<:example:801551839703072768> *For example you can enter : `Size M or 8,5/9/9,5…`*'false)
+                                                                                                                                                            .addfield('__**Careful :**__','<:Warning:778967970394406932> Shoe sizes are **only** in US size'false)
+                                                                                                                                                            .setTitle(':straight_ruler: __** What is/are the Size(s) you looking for ?**__')).then(async () => {
                                                                                                                                                                 await     message.author.dmChannel.awaitMessages(filter, {
                                                                                                                                                                     max: 1,
                                                                                                                                                                     time: 60000,
@@ -359,7 +368,10 @@ module.exports = {
                                                                                                                                                                     await    message.author.send(new MessageEmbed()
                                                                                                                                                                         .setTimestamp()
                                                                                                                                                                         .setFooter(client.user.username, client.user.displayAvatarURL())
-                                                                                                                                                                        .setTitle('Please send your buying conditions.')).then(async () => {
+                                                                                                                                                                        .addauthor('Product 1 :')
+                                                                                                                                                                        .addfield('__**What to do now ?**__','<:Arrow:778967880230109185> Please, **enter** the conditions you\’re looking for :<:Arrow:778967880230109185> Please check the **reminder** down below for the different conditions !!!\n<:example:801551839703072768> *For example you can enter : `DS`*\n** ** ** **'false)
+                                                                                                                                                                        .addfield(':bell: __**Friendly Reminder**__’,**7/10 :** Very Used\n**8/10 :** Used\n**9,5 :** Just tried/Worn Once\n**DS :** Deadstock = Brand New\n**VNDS :** Very near DS'false)
+                                                                                                                                                                        .setTitle(':magic_wand: __**What Condition are you looking for ?**__)).then(async () => {
                                                                                                                                                                             await   message.author.dmChannel.awaitMessages(filter, {
                                                                                                                                                                                 max: 1,
                                                                                                                                                                                 time: 180000,
@@ -370,7 +382,10 @@ module.exports = {
                                                                                                                                                                                 await   message.author.send(new MessageEmbed()
                                                                                                                                                                                     .setTimestamp()
                                                                                                                                                                                     .setFooter(client.user.username, client.user.displayAvatarURL())
-                                                                                                                                                                                    .setTitle('Please send the price you want to buy the item at.')).then(async () => {
+                                                                                                                                                                                    .addauthor('Product 1 :')
+                                                                                                                                                                                    .addfield('__**What to do now ?**__','<:Arrow:778967880230109185> Please, **enter** the price your looking for to buy :\n<:example:801551839703072768> *For example you can enter : `500€ / 450£`*'false)
+                                                                                                                                                                                    .addfield('__**Careful :**__','<:Warning:778967970394406932> Prices are **only** in euros **€** or pound **£**'false)
+                                                                                                                                                                                    .setTitle(' <:cash:782230505356787752> __**One last thing, What Price are you looking for ?**__')).then(async () => {
                                                                                                                                                                                         await    message.author.dmChannel.awaitMessages(filter, {
                                                                                                                                                                                             max: 1,
                                                                                                                                                                                             time: 60000,
