@@ -419,23 +419,23 @@ module.exports = {
                                                                                                                             }
                                                                                                                             embed
                                                                                                                             .addField(':satellite_orbital: **Location:**',answers[0], true)
-                                                                                                                            .addField('**:triangular_flag_on_post: Meet-Up :**',answers[1],true)
-                                                                                                                            .addField('**:ninja: Refs :**',`[Click here](${answers[4]})`,true)
-                                                                                                                            .addField('**:ferry: Bulk :**', answers[2], true)
-                                                                                                                            .addField('**:coin: Firm :**',answers[3], true)
-                                                                                                                            .addField('**:cactus: Shipping Fees :**', answers[5], true)
-                                                                                                                            .setColor('ORANGE')
-                                                                                                                            embed.addField('**---------------------------------------------------------------------------------------------**','\u200b', false)
+                                                                                                                            .addField(':triangular_flag_on_post: **Meet-Up :**',answers[1],true)
+                                                                                                                            .addField(':ninja: **Refs :**',`[Click here](${answers[4]})`,true)
+                                                                                                                            .addField('<:cargo:801212710377095168> **Bulk :**', answers[2], true)
+                                                                                                                            .addField('<:icons8roche96:801212710154403890> **Firm :**',answers[3], true)
+                                                                                                                            .addField(':cactus: **Shipping Fees :**', answers[5], true)
+                                                                                                                            .setColor('#0047FF')
+                                                                                                                            embed.addField('————————————————————————————————————','** ** ** **', false)
                                                                                                                             let i = 6
                                                                                                                             for (let o = 0;o<qty;o++){
                                                                                                                                 embed.addField(`:shopping_cart: **__Product ${o} : \"${answers[i]}\"__**`,answers[i+1], false)
                                                                                                                                 i = i +2
-                                                                                                                                embed.addField(':straight_ruler: Size US :',answers[i], true)
+                                                                                                                                embed.addField(':straight_ruler: **Size :**',answers[i], true)
                                                                                                                                 i = i + 1
-                                                                                                                                embed.addField(':magic_wand: Condition :',answers[i],true)
+                                                                                                                                embed.addField(':magic_wand: **Condition :**',answers[i],true)
                                                                                                                                 i = i + 1
-                                                                                                                                embed.addField(':moneybag: Price €/£ :', answers[i], true)
-                                                                                                                                embed.addField('**---------------------------------------------------------------------------------------------**','\u200b', false)
+                                                                                                                                embed.addField('<:cash:782230505356787752> **Price €/£ :**', answers[i], true)
+                                                                                                                                embed.addField('--------------------------------------------------------------------------------------------------','** ** ** **', false)
                                                                                                                                 i = i + 1
                                                                                                                             }
                                                                                                                            client.channels.cache.get(channel).send(embed)
