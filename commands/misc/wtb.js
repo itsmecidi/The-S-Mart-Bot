@@ -418,17 +418,17 @@ module.exports = {
 
                                                                                                                             }
                                                                                                                             embed
-                                                                                                                            .addField(':satellite_orbital: **Location:**',answers[0], true)
-                                                                                                                            .addField(':triangular_flag_on_post: **Meet-Up :**',answers[1],true)
+                                                                                                                            .addField(':satellite_orbital: **Location:**',**answers[0]**, true)
+                                                                                                                            .addField(':triangular_flag_on_post: **Meet-Up :**',**answers[1]**,true)
                                                                                                                             .addField(':ninja: **Refs :**',`[Click here](${answers[4]})`,true)
-                                                                                                                            .addField('<:cargo:801212710377095168> **Bulk :**', answers[2], true)
+                                                                                                                            .addField('<:cargo:801212710377095168> **Bulk :**',answers[2], true)
                                                                                                                             .addField('<:icons8roche96:801212710154403890> **Firm :**',answers[3], true)
-                                                                                                                            .addField(':cactus: **Shipping Fees :**', answers[5], true)
+                                                                                                                            .addField(':cactus: **Shipping Fees :**',**answers[5]**, true)
                                                                                                                             .setColor('#0047FF')
                                                                                                                             embed.addField('————————————————————————————————————','** ** ** **', false)
                                                                                                                             let i = 6
                                                                                                                             for (let o = 0;o<qty;o++){
-                                                                                                                                embed.addField(`:shopping_cart: **__Product ${o} : \"${answers[i]}\"__**`,answers[i+1], false)
+                                                                                                                                embed.addField(`:shopping_cart: __**Product ${o+1} : ${answers[i]}__**,answers[i+1], false)
                                                                                                                                 i = i +2
                                                                                                                                 embed.addField(':straight_ruler: **Size :**',answers[i], true)
                                                                                                                                 i = i + 1
@@ -443,18 +443,18 @@ module.exports = {
                                                                                                                             console.log(answers)
                                                                                                                         })
                                                                                                                         .catch(collected => {
-                                                                                                                            message.author.dmChannel.send('Please restart, you took too long to answer (2 minutes)');
+                                                                                                                            message.author.dmChannel.send('Sorry <@idDuGars> you took too long to answer. Please restart !!! (2 minutes)');
                                                                                                                         });
                                                                                                                 });
                                                                                                             })
                                                                                                             .catch(() => {
-                                                                                                                message.author.dmChannel.send('Please restart, you took too long to answer (5 minutes)');
+                                                                                                                message.author.dmChannel.send('Sorry <@idDuGars> you took too long to answer. Please restart !!! (5 minutes)');
                                                                                                             });
                                                                                                     });
 
                                                                                                 })
                                                                                                 .catch(collected => {
-                                                                                                    message.author.dmChannel.send('Please restart, you took too long to answer (5 minutes)');
+                                                                                                    message.author.dmChannel.send('Sorry <@idDuGars> you took too long to answer. Please restart !!! (5 minutes)');
                                                                                                 });
                                                                                         });
 
