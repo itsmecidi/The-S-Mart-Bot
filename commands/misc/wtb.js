@@ -20,8 +20,11 @@ module.exports = {
             message.author.send(new MessageEmbed().setTitle('<:takemymoney:780556014398472192> __**Wanna Buy ?**__')
                 .setTimestamp()
                 .setFooter(client.user.username, client.user.displayAvatarURL())
-                .addfield('shopping_cart: __**How does it work ?**__','<:Warning:778967970394406932> **You have 90 secs to answer each question**.\n<:Arrow:778967880230109185> Please answer or react to **all** questions to create the post.\n<:Arrow:778967880230109185> All answers **must** match to your product(s) characteristics.\n<:Help:778973470792876032> If you need some help, feel free to open a ticket in <#778302895526903818> !!\n<a:Verif:780840360804220998> Remember that, the more details you provide to your post, the better are your chances to sell/buy/trade your product(s) !!!\n** ** ** **\nPlease react with :shopping_cart: to start !!!',false)
-                .setDescription('<a:Hi:792339295238094859> Hi <@idDuGars> thank you for creating a post with The S-Mart !!!\n<:Bot1:779069769856057384> **The bot will now ask you some details about your post :\n**** ** ** **')
+                .addField(' __**How does it work ?**__','<:Arrow:778967880230109185> Please answer or react to **all** questions to create the post.\n<:Bot1:779069769856057384> **The bot will now ask you some details about your post !!!**'false)
+                .addField('__**Careful ?**__','<:Warning:778967970394406932> **You have 90 secs to answer each question !!!**\n<:Warning:778967970394406932> All answers **must** match to your product(s) characteristics !!'false)
+                .addField('__**Notes :**__','<a:Verified1:778656791332257813> Remember that, the more details you provide to your post, the better are your chances to sell/buy/trade your product(s) !!!\n** ** ** **\n** ** ** **',false)                
+                .addField('Please react with :shopping_cart: to start !!!','** ** ** **'false)                
+                .setDescription('<a:Hi:792339295238094859> Hi user thank you for creating a post with The S-Mart !!!\nNeed some <:Help:778973470792876032>, come open a ticket in <#778302895526903818> !!\n** ** ** **')
             ).then(async startMessage => {
 
 
