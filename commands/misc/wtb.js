@@ -120,7 +120,7 @@ module.exports = {
 
                                                 break;
                                             default:
-                                                return message.author.send('Wrong number, please restart.')
+                                                return message.author.send('Oopsy... You entered a wrong number, please restart !!!')
 
                                         }
 
