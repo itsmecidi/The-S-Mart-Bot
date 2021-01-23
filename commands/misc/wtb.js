@@ -25,16 +25,16 @@ module.exports = {
                     .addField(' __**How does it work ?**__', '<:Arrow:778967880230109185> Please **answer** or **react** to **all** questions to create the post.\n<:Bot1:779069769856057384> **The bot will now ask you some details about your post !!!**', false)
                     .addField('__**Careful ?**__', '<:Warning:778967970394406932> **You have 90 secs to answer each question !!!**', false)
                     .addField('__**Notes :**__', '<a:Verified1:778656791332257813> Remember that, **the more details** you provide to your post, **the better are** your chances to sell/buy/trade your product(s) !!!\n** ** ** **\n** ** ** **', false)
-                    .addField('Please react with 🛒 to start !!!', '** ** ** **', false)
+                    .addField('Please react with :shopping_cart: to start !!!', '** ** ** **', false)
                     .setDescription('<a:Hi:792339295238094859> Hi user, thank you for creating a post with The S-Mart !!!\nNeed some <:Help:778973470792876032>, come open a ticket in <#778302895526903818> !!\n** ** ** **'))
                 .then(async startMessage => {
 
 
 
-                    startMessage.react('🛒')
+                    startMessage.react(':shopping_cart: ')
                     const collector = startMessage.createReactionCollector(
 
-                        (reaction, user) => ['🛒'].includes(reaction.emoji.name) && user.id === message.author.id,
+                        (reaction, user) => [':shopping_cart: '].includes(reaction.emoji.name) && user.id === message.author.id,
 
                         {
                             time: 90000
@@ -47,7 +47,7 @@ module.exports = {
                     let qty;
                     collector.on('collect', async reaction => {
 
-                        if (reaction.emoji.name === '🛒') {
+                        if (reaction.emoji.name === ':shopping_cart:') {
                             const filter = (user) => user.author.id === message.author.id
                             const filterr = (reaction, user) => user.id === message.author.id
                             message.author.send(new MessageEmbed()
@@ -154,9 +154,25 @@ module.exports = {
                                                 .setFooter(client.user.username, client.user.displayAvatarURL())
                                                 .setTitle(':flag_eu: __**What is your Location ?**__')
                                                 .setAuthor('Step 2 :')
-                                                .addField('__**What to do now ?**__', '<:Arrow:778967880230109185> Please **select** your location in the following list :\n<:Arrow:778967880230109185> Your location informs other users that you might be close to them !!!\n<:example:801551839703072768> *For example, you can enter : `1 or 2 or 3 …`*',false)
-                                                .addField('__**Notes :**__', '<a:Verified1:778656791332257813> Location **increase** the chance of possible Meet-Up, and **saves** some fees :wink:\n<a:Verified1:778656791332257813> Your post will **also** automatically be published in #Close to me 🔍',false)
-                                                .setDescription('Need some <:Help:778973470792876032>, come open a ticket in <#778302895526903818>\n** ** ** **')
+                                                .addField('__**What to do now ?**__', '<:Arrow:778967880230109185> Please **select** your location in the following list :\n<:Arrow:778967880230109185> Your location **informs** other users that you **might** be **close to them** <a:pepelaser:802479990183952384> !!!\n<:example:801551839703072768> *For example, you can enter : `1 or 2 or 3 …`*',false)
+                                                .addField('__**Notes :**__', '<a:Verified1:778656791332257813> Location **increase** the chance of **possible Meet-Ups**, and **saves** some fees :wink:\n<a:Verified1:778656791332257813> Your post will **also** automatically be **posted** in #Close to me 🔍 !!',false)
+                                                .addField('--------------------------------------------------------------------------------------------------','** ** ** **', false)
+                                                .addField('**1. France :**',':croissant::french_bread:<:tour:779053983104761896>', true)
+                                                .addField('**2. Germany :**',':beer:', true)
+                                                .addField('**3. U.K. :**',':cooking::bacon:', true) 
+                                                .addField('**4. Italy :**',':pizza:', true) 
+                                                .addField('**5. Netherlands :**',':potted_plant:', true)
+                                                .addField('**6. Belgium :**',':fries:', true) 
+                                                .addField('**7. Spain :**','<:paella:801043960918179860>', true)
+                                                .addField('**8. Portugal :**',':beach:', true) 
+                                                .addField('**9. Ireland :**','<:Leprechaun:801048914665013278>', true)
+                                                .addField('**10. Switzerland :**',':cheese:<:fondu:779055906519646238>' true)
+                                                .addField('**11. Norway :**',':mountain_snow::evergreen_tree:' true)
+                                                .addField('**12. Sweden :**','<:viking:801042386658525214>' true)
+                                                .addField('**13. Danmark :**','<:bike:801048914639061002>' true)
+                                                .addField('**14. Poland :**',':nesting_dolls:' true)
+                                                .addField('**15. Romania :**',':vampire:' true)                        
+                                               .setDescription('Need some <:Help:778973470792876032>, come open a ticket in <#778302895526903818>\n** ** ** **')
                                             ).then(async () => {
                                                 message.author.dmChannel.awaitMessages(filter, {
                                                         max: 1,
@@ -204,16 +220,30 @@ module.exports = {
                                                                 answers.push(' ')
 
                                                                 break;
-
                                                             case '10':
                                                                 answers.push(' ')
 
                                                                 break;
-
                                                             case '11':
                                                                 answers.push(' ')
-
+                                                            
                                                                 break;
+                                                            case '12':
+                                                                answers.push(' ')
+
+                                                                break; 
+                                                            case '13':
+                                                                answers.push(' ')
+                                                                             
+                                                                 break;            
+                                                            case '14':
+                                                                answers.push(' ')
+                                                                   
+                                                                 break;           
+                                                            case '15':
+                                                                answers.push(' ')                
+
+                                                                 break;
                                                             default:
                                                                 return message.author.send('Oopsie daisy... You entered a wrong number, Please restart with a number in the list !!!')
 
