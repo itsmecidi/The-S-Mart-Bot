@@ -353,40 +353,7 @@ module.exports = {
                                                                                             })
                                                                                     })
                                                                                 }
-                                                                                message.author.send(new MessageEmbed()
-                                                                                    .setTimestamp()
-                                                                                    .setFooter(client.user.username, client.user.displayAvatarURL())
-                                                                                    .setAuthor('Step 6 :')
-                                                                                    .setTitle('<:cash:782230505356787752> __**Is your Price Firm ?**__')
-                                                                                    .addField('__**Are you flexible with your price ?**__', '<:Check:778698838521282612> Yes I\'m am\n<:x_:778698838898507806> Nop', false)
-                                                                                    .addField('__**Hol\'Up Amigos :**__', '<a:Verified1:778656791332257813> Flexible price **favours negociation** and increase your chance of buyings, don\'t sleep on it !!!', false)
-                                                                                    .setDescription('Need some <:Help:778973470792876032>, come open a ticket in <#778302895526903818>\n** ** ** **')
-                                                                                ).then(async secondQuestion => {
-                                                                                    await secondQuestion.react('778698838521282612')
-
-                                                                                    await secondQuestion.react('778698838898507806')
-
-
-                                                                                    secondQuestion.awaitReactions(filterr, {
-                                                                                            time: 60000,
-                                                                                            max: 1
-                                                                                        })
-                                                                                        .then(async collected2 => {
-                                                                                            if (!collected2.first()) return message.author.send('Oopsie... You took too much time to react, Please restart !!!')
-                                                                                            switch (collected2.first().emoji.id) {
-                                                                                                case '778698838521282612':
-                                                                                                    answers.push('<:Check:778698838521282612>')
-
-                                                                                                    break;
-
-                                                                                                case '778698838898507806':
-                                                                                                    answers.push('<:x_:778698838898507806>')
-
-                                                                                                    break;
-                                                                                                default:
-                                                                                                    return message.author.send('Oopsie... You reacted with the wrong reaction, Please restart !!!')
-
-                                                                                            }
+                                                                             
                                                                                             let timeCheck = null
                                                                                             await message.author.send(new MessageEmbed()
                                                                                                 .setTimestamp()
@@ -485,6 +452,40 @@ module.exports = {
                                                                                                     timeCheck = true
                                                                                                     if (paymentMethods.length == 0) return message.author.send('You didn\'t react a single time.');
                                                                                                     payMethods = paymentMethods.join(' ');
+                                                                                                    message.author.send(new MessageEmbed()
+                                                                                                    .setTimestamp()
+                                                                                                    .setFooter(client.user.username, client.user.displayAvatarURL())
+                                                                                                    .setAuthor('Step 6 :')
+                                                                                                    .setTitle('<:cash:782230505356787752> __**Is your Price Firm ?**__')
+                                                                                                    .addField('__**Are you flexible with your price ?**__', '<:Check:778698838521282612> Yes I\'m am\n<:x_:778698838898507806> Nop', false)
+                                                                                                    .addField('__**Hol\'Up Amigos :**__', '<a:Verified1:778656791332257813> Flexible price **favours negociation** and increase your chance of buyings, don\'t sleep on it !!!', false)
+                                                                                                    .setDescription('Need some <:Help:778973470792876032>, come open a ticket in <#778302895526903818>\n** ** ** **')
+                                                                                                ).then(async secondQuestion => {
+                                                                                                    await secondQuestion.react('778698838521282612')
+                
+                                                                                                    await secondQuestion.react('778698838898507806')
+                
+                
+                                                                                                    secondQuestion.awaitReactions(filterr, {
+                                                                                                            time: 60000,
+                                                                                                            max: 1
+                                                                                                        })
+                                                                                                        .then(async collected2 => {
+                                                                                                            if (!collected2.first()) return message.author.send('Oopsie... You took too much time to react, Please restart !!!')
+                                                                                                            switch (collected2.first().emoji.id) {
+                                                                                                                case '778698838521282612':
+                                                                                                                    answers.push('<:Check:778698838521282612>')
+                
+                                                                                                                    break;
+                
+                                                                                                                case '778698838898507806':
+                                                                                                                    answers.push('<:x_:778698838898507806>')
+                
+                                                                                                                    break;
+                                                                                                                default:
+                                                                                                                    return message.author.send('Oopsie... You reacted with the wrong reaction, Please restart !!!')
+                
+                                                                                                            }
                                                                                                     await message.author.send(new MessageEmbed()
                                                                                                     .setTimestamp()
                                                                                                     .setFooter(client.user.username, client.user.displayAvatarURL())
