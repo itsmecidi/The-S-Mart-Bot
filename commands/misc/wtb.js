@@ -392,7 +392,7 @@ module.exports = {
                                                                                                 await firstQuestion.react('778698838521282612')
                                                                                                 setTimeout( () =>
                                                                                                 {
-                                                                                                    if(!timeCheck) message.author.send(new MessageEmbed().setTitle('<:Caveman:802142424088051712> **__Are you Done Boss ?__**').setColor('#7901FF').setDescription('** ** ** **').setField('__**What to do now ?**__','<:Arrow:778967880230109185> Please **react when you\'re done** choosing all your payment method(s) !!', false).setField('<:Check:778698838521282612> Yeah, I\'m good bro !!!','** ** ** **', false))
+                                                                                                    if(!timeCheck) message.author.send(new MessageEmbed().setTitle('<:Caveman:802142424088051712> **__Are you Done Boss ?__**').setColor('#7901FF').setDescription('** ** ** **').addField('__**What to do now ?**__','<:Arrow:778967880230109185> Please **react when you\'re done** choosing all your payment method(s) !!', false).addField('<:Check:778698838521282612> Yeah, I\'m good bro !!!','** ** ** **', false))
                                                                                                 }
                                                                                                 
                                                                                                 ,8000)

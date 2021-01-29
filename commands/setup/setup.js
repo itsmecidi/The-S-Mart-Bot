@@ -114,6 +114,7 @@ module.exports = {
 
                                 let awaitReaction = await message.channel.send(new MessageEmbed().setTitle('Please now react with an emoji.').setColor('00ff00'))
                                 let filter1 = (reaction, user) => user.id === message.author.id;
+                                let reactionTest;
                                 awaitReaction.awaitReactions(filter1, {
                                         max: 1,
                                         time: 60000,
@@ -125,7 +126,7 @@ module.exports = {
                                         let reactionName;
                                         if (collected.first().emoji.id) {
                                             const rID = collected.first().emoji.id
-                                            let reactionTest = await client.emojis.cache.find(emoji => emoji.id == rID)
+                                            reactionTest = await client.emojis.cache.find(emoji => emoji.id == rID)
                                             if (reactionTest == undefined)
                                                 return message.channel.send('I don\'t have access to this emoji')
                                             else reactionName = rID
@@ -141,11 +142,10 @@ module.exports = {
                                             }, `reactionrole.${rMessage}.${Date.now()}`)
 
                                         }
-                                        if (!client.setup.has(keyOwner, 'reactionrole')) {
-
+                                        else{
                                             let time = Date.now()
                                             if (client.setup.has(keyOwner, `reactionrole.${rMessage}`))
-                                                return client.setup.set(keyOwner, {
+                                                client.setup.set(keyOwner, {
                                                     channel: channel.id,
                                                     message: rMessage,
                                                     role: role.id,
@@ -163,7 +163,12 @@ module.exports = {
 
                                         }
                                         message.channel.send(new MessageEmbed().setTitle('Your reaction role system has been set up.').setColor('GREEN'))
+                                        console.log(reactionName)
+                                        console.log(message.guild.emojis.cache.get(reactionName))
+                                        if(reactionTest)
                                         await check.react(message.guild.emojis.cache.get(reactionName))
+                                        else check.react(reactionName)
+                                        console.log(client.setup)
 
 
                                     })
@@ -175,7 +180,7 @@ module.exports = {
 
 
                     // message.channel.send(embed.setTitle(`You choose **${client.setup.get(keyOwner, 'joinrolename')} **for the role to assign.`))
-                }
+                }   
               
              
             })

@@ -22,7 +22,7 @@ module.exports = {
                     .setTitle('<:takemymoney:780556014398472192> __**Wanna Sell ?**__')
                     .setColor('#7901FF')
                     .addField(' __**How does it work ?**__', '<:Arrow:778967880230109185> Please **answer** or **react** to **all questions** to create the post.\n<:Bot1:779069769856057384> **The bot will now ask you some details about your post !!!**', false)
-                    .addField('__**Careful ?**__', '<:Warning:778967970394406932> **You have 90 secs to answer each question !!!**', false)
+                    .addField('__**Careful :**__', '<:Warning:778967970394406932> **You have 90 secs to answer each question !!!**\n<:Warning:778967970394406932> All answers **must match** to your product(s) **characteristics** !!', false)
                     .addField('__**Notes :**__', '<a:Verified1:778656791332257813> Remember that, **the more details** you provide to your post, **the better are** your chances to sell/buy/trade your product(s) !!!\n** ** ** **\n** ** ** **', false)
                     .addField('Please react with 🛒 to start !!!', '** ** ** **', false)
                     .setDescription(`<a:Hi:792339295238094859> Hi <@${message.author.id}>, thank you for creating a post with The S-Mart !!!\nNeed some <:Help:778973470792876032>, come open a ticket in <#778302895526903818> !!\n** ** ** **`))
@@ -358,13 +358,132 @@ module.exports = {
                                                                                             })
                                                                                     })
                                                                                 }
+                                                                                let timeCheck = null
+                                                                                await message.author.send(new MessageEmbed()
+                                                                                    .setTimestamp()
+                                                                                    .setFooter(client.user.username, client.user.displayAvatarURL())
+                                                                                    .setAuthor('Step 5 :')
+                                                                                    .setColor('#7901FF')
+                                                                                    .setTitle('__**What Payment Methods do you Take ?**__')
+                                                                                    .setDescription('Need some <:Help:778973470792876032>, come open a ticket in <#778302895526903818>\n** ** ** **')
+                                                                                    .addField('__**What to do now ?**__','<:Arrow:778967880230109185> Please **react** with the payment method(s) you accept !!\n<:Arrow:778967880230109185> You can select **multiple** payment methods !!!\n<:Arrow:778967880230109185> When **you\'re done**, react with <:FT1:778698838521282612> !!!', false)
+                                                                                    .addField('__**Tips :**__','<a:verif:778656791332257813> You can react to **multiple** payment methods !!!\n<a:verif:778656791332257813> The more methods you take, better are your chances of selling !!!', false)
+                                                                                    .addField('--------------------------------------------------------------------------------------------------','** ** ** **', false)
+                                                                                    .addField('**PayPal :**','<:Paypal:779106425900892190>', true)
+                                                                                    .addField('**Revolut :**','<:revolut:779106425719881729>', true)
+                                                                                    .addField('**Zelle :**','<:zelle:802510618309296128>', true)
+                                                                                    .addField('**Apple Pay :**','<:applepay:779106425858555944>', true)
+                                                                                    .addField('**CashApp :**','<:cashapp:802510618388594688>', true)
+                                                                                    .addField('**Crypto :**','<:Bitcoins:802510801746919474>', true)
+                                                                                    .addField('**Bank Transfers :**',':bank:', true)
+                                                                                    .addField('**Chocolate :**',':chocolate_bar:', true)
+                                                                                    .addField('**ALL :**','<:plug1:802516321933197332>', true)                      
+                                                                                ).then(async firstQuestion => {
+                                                                                    await firstQuestion.react('779106425900892190')
+                                                                                    await firstQuestion.react('779106425719881729')
+                                                                                    await firstQuestion.react('802510618309296128')
+                                                                                    await firstQuestion.react('779106425858555944')
+                                                                                    await firstQuestion.react('802510618388594688')
+                                                                                    await firstQuestion.react('802510801746919474')
+                                                                                    await firstQuestion.react('🏦')
+                                                                                    await firstQuestion.react('🍫')
+                                                                                    await firstQuestion.react('802516321933197332')
+                                                                                    await firstQuestion.react('778698838521282612')
+                                                                                    setTimeout( () =>
+                                                                                    {
+                                                                                        if(!timeCheck) message.author.send(new MessageEmbed()
+                                                                                        .setTitle('<:Caveman:802142424088051712> **__Are you Done Boss ?__**')
+                                                                                        .setColor('#7901FF')
+                                                                                        .setDescription('** ** ** **')
+                                                                                        .addField('__**What to do now ?**__','<:Arrow:778967880230109185> Please **react when you\'re done** choosing all your payment method(s) !!', false)
+                                                                                        .addField('<:Check:778698838521282612> Yeah, I\'m good bro !!!','** ** ** **', false))
+                                                                                    }
+                                                                                    
+                                                                                    ,8000)
+                                                                                    const collector = await firstQuestion.createReactionCollector(filterr, {
+                                                                                        max: 9,
+                                                                                        time: 60000,
+                                                                                        errors: ['time']
+                                                                                    });
+
+
+                                                                                  
+
+
+                                                                                    let paymentMethods = [];
+                                                                                    await collector.on('collect', r => {
+                                                                                        if (r.emoji.id && r.emoji.id == '778698838521282612') {
+                                                                                            if (paymentMethods.length > 0)
+                                                                                                collector.stop()
+                                                                                        } else {
+                                                                                            if (r.emoji.id) {
+                                                                                                switch (r.emoji.id) {
+                                                                                                    case '779106425900892190':
+                                                                                                        paymentMethods.push('<:Pay1:779106425900892190>')
+
+                                                                                                        break;
+
+                                                                                                    case '779106425719881729':
+                                                                                                        paymentMethods.push('<:Pay2:779106425719881729>')
+
+                                                                                                        break;
+                                                                                                    case '802510618309296128':
+                                                                                                        paymentMethods.push('<:Pay4:802510618309296128>')
+
+                                                                                                        break;
+
+                                                                                                    case '779106425858555944':
+                                                                                                        paymentMethods.push('<:Pay3:779106425858555944>')
+
+                                                                                                        break;
+                                                                                                    case '802510618388594688':
+                                                                                                        paymentMethods.push('<:Pay5:802510618388594688>')
+
+                                                                                                        break;
+
+                                                                                                    case '802510801746919474':
+                                                                                                        paymentMethods.push('<:Pay6:802510801746919474>')
+
+                                                                                                        break;
+
+
+
+                                                                                                    case '802516321933197332':
+
+                                                                                                        paymentMethods.push('<:plug:802516321933197332>')
+
+                                                                                                        break;
+
+                                                                                                    default:
+                                                                                                        return message.author.send('Oopsie... You reacted with the wrong reaction, Please restart !!!')
+
+
+                                                                                                }
+                                                                                            } else if (r.emoji.name == '🏦') {
+                                                                                                paymentMethods.push('🏦')
+                                                                                                
+                                                                                            } else if (r.emoji.name == '🍫') paymentMethods.push('🍫');
+                                                                                            
+                                                                                                else {
+                                                                                                return message.author.send('Oopsie... You reacted with the wrong reaction, Please restart !!!');
+                                                                                            }
+
+
+
+                                                                                        }
+                                                                                    });
+
+                                                                                    await collector.on('end', async (collected)  => {
+                                                                                        timeCheck = true
+                                                                                        if (paymentMethods.length == 0) return message.author.send('Oopsie.. You didn\'t react a single time, Please react with at least one reaction !!!');
+                                                                                        payMethods = paymentMethods.join(' ');
                                                                                 message.author.send(new MessageEmbed()
                                                                                                     .setTimestamp()
                                                                                                     .setFooter(client.user.username, client.user.displayAvatarURL())
                                                                                                     .setAuthor('Step 6 :')
                                                                                                     .setColor('#7901FF')
-                                                                                                    .setTitle('<:cash:782230505356787752> __**Are your price firms ?**__')
-                                                                                                    .addField('__**Please tell me if your prices are firm or not ?**__', '<:Check:778698838521282612> **Yezzir** !!!\n<:x_:778698838898507806> **Nah** !!!\n** ** ** **', false)
+                                                                                                    .setTitle('<:cash:782230505356787752> __**Do you Sell in Bulk ?**__')
+                                                                                                    .addField('__**Are you selling in quantity ?**__', '<:Check:778698838521282612> **Yezzir** !!!\n<:x_:778698838898507806> **Nah** !!!\n** ** ** **', false)
                                                                                                     .setDescription('Need some <:Help:778973470792876032>, come open a ticket in <#778302895526903818>\n** ** ** **')
                                                                                                 ).then(async secondQuestion => {
                                                                                                     await secondQuestion.react('778698838521282612')
@@ -392,125 +511,7 @@ module.exports = {
                                                                                                                     return message.author.send('Oopsie... You reacted with the wrong reaction, Please restart !!!')
                 
                                                                                                             }
-                                                                                            let timeCheck = null
-                                                                                            await message.author.send(new MessageEmbed()
-                                                                                                .setTimestamp()
-                                                                                                .setFooter(client.user.username, client.user.displayAvatarURL())
-                                                                                                .setAuthor('Step 5 :')
-                                                                                                .setColor('#7901FF')
-                                                                                                .setTitle('__**What Payment Methods do you Take ?**__')
-                                                                                                .setDescription('Need some <:Help:778973470792876032>, come open a ticket in <#778302895526903818>\n** ** ** **')
-                                                                                                .addField('__**What to do now ?**__','<:Arrow:778967880230109185> Please **react** with the payment method(s) you accept !!\n<:Arrow:778967880230109185> You can select **multiple** payment methods !!!\n<:Arrow:778967880230109185> When **you\'re done**, react with <:FT1:778698838521282612> !!!', false)
-                                                                                                .addField('__**Tips :**__','<a:verif:778656791332257813> You can react to **multiple** payment methods !!!\n<a:verif:778656791332257813> The more methods you take, better are your chances of selling !!!', false)
-                                                                                                .addField('--------------------------------------------------------------------------------------------------','** ** ** **', false)
-                                                                                                .addField('**PayPal :**','<:Paypal:779106425900892190>', true)
-                                                                                                .addField('**Revolut :**','<:revolut:779106425719881729>', true)
-                                                                                                .addField('**Zelle :**','<:zelle:802510618309296128>', true)
-                                                                                                .addField('**Apple Pay :**','<:applepay:779106425858555944>', true)
-                                                                                                .addField('**CashApp :**','<:cashapp:802510618388594688>', true)
-                                                                                                .addField('**Crypto :**','<:Bitcoins:802510801746919474>', true)
-                                                                                                .addField('**Bank Transfers :**',':bank:', true)
-                                                                                                .addField('**Chocolate :**',':chocolate_bar:', true)
-                                                                                                .addField('**ALL :**','<:plug1:802516321933197332>', true)                      
-                                                                                            ).then(async firstQuestion => {
-                                                                                                await firstQuestion.react('779106425900892190')
-                                                                                                await firstQuestion.react('779106425719881729')
-                                                                                                await firstQuestion.react('802510618309296128')
-                                                                                                await firstQuestion.react('779106425858555944')
-                                                                                                await firstQuestion.react('802510618388594688')
-                                                                                                await firstQuestion.react('802510801746919474')
-                                                                                                await firstQuestion.react('🏦')
-                                                                                                await firstQuestion.react('🍫')
-                                                                                                await firstQuestion.react('802516321933197332')
-                                                                                                await firstQuestion.react('778698838521282612')
-                                                                                                setTimeout( () =>
-                                                                                                {
-                                                                                                    if(!timeCheck) message.author.send(new MessageEmbed()
-                                                                                                    .setTitle('<:Caveman:802142424088051712> **__Are you Done Boss ?__**')
-                                                                                                    .setColor('#7901FF')
-                                                                                                    .setDescription('** ** ** **')
-                                                                                                    .addField('__**What to do now ?**__','<:Arrow:778967880230109185> Please **react when you\'re done** choosing all your payment method(s) !!', false)
-                                                                                                    .addField('<:Check:778698838521282612> Yeah, I\'m good bro !!!','** ** ** **', false))
-                                                                                                }
-                                                                                                
-                                                                                                ,8000)
-                                                                                                const collector = await firstQuestion.createReactionCollector(filterr, {
-                                                                                                    max: 9,
-                                                                                                    time: 60000,
-                                                                                                    errors: ['time']
-                                                                                                });
-
-
-                                                                                              
-
-
-                                                                                                let paymentMethods = [];
-                                                                                                await collector.on('collect', r => {
-                                                                                                    if (r.emoji.id && r.emoji.id == '778698838521282612') {
-                                                                                                        if (paymentMethods.length > 0)
-                                                                                                            collector.stop()
-                                                                                                    } else {
-                                                                                                        if (r.emoji.id) {
-                                                                                                            switch (r.emoji.id) {
-                                                                                                                case '779106425900892190':
-                                                                                                                    paymentMethods.push('<:Pay1:779106425900892190>')
-
-                                                                                                                    break;
-
-                                                                                                                case '779106425719881729':
-                                                                                                                    paymentMethods.push('<:Pay2:779106425719881729>')
-
-                                                                                                                    break;
-                                                                                                                case '802510618309296128':
-                                                                                                                    paymentMethods.push('<:Pay4:802510618309296128>')
-
-                                                                                                                    break;
-
-                                                                                                                case '779106425858555944':
-                                                                                                                    paymentMethods.push('<:Pay3:779106425858555944>')
-
-                                                                                                                    break;
-                                                                                                                case '802510618388594688':
-                                                                                                                    paymentMethods.push('<:Pay5:802510618388594688>')
-
-                                                                                                                    break;
-
-                                                                                                                case '802510801746919474':
-                                                                                                                    paymentMethods.push('<:Pay6:802510801746919474>')
-
-                                                                                                                    break;
-
-
-
-                                                                                                                case '802516321933197332':
-
-                                                                                                                    paymentMethods.push('<:plug:802516321933197332>')
-
-                                                                                                                    break;
-
-                                                                                                                default:
-                                                                                                                    return message.author.send('Oopsie... You reacted with the wrong reaction, Please restart !!!')
-
-
-                                                                                                            }
-                                                                                                        } else if (r.emoji.name == '🏦') {
-                                                                                                            paymentMethods.push('🏦')
-                                                                                                            
-                                                                                                        } else if (r.emoji.name == '🍫') paymentMethods.push('🍫');
-                                                                                                        
-                                                                                                            else {
-                                                                                                            return message.author.send('Oopsie... You reacted with the wrong reaction, Please restart !!!');
-                                                                                                        }
-
-
-
-                                                                                                    }
-                                                                                                });
-
-                                                                                                await collector.on('end', async (collected)  => {
-                                                                                                    timeCheck = true
-                                                                                                    if (paymentMethods.length == 0) return message.author.send('Oopsie.. You didn\'t react a single time, Please react with at least one reaction !!!');
-                                                                                                    payMethods = paymentMethods.join(' ');
+                                                                                           
                                                                                                    
                                                                                                     await message.author.send(new MessageEmbed()
                                                                                                     .setTimestamp()
@@ -618,8 +619,8 @@ module.exports = {
                                                                                                                                                         .setAuthor(`Product ${i+1} :`)
                                                                                                                                                         .setColor('#7901FF')
                                                                                                                                                         .setDescription('** ** ** **')
-                                                                                                                                                        .addField('__**What to do now ?**__', '<:Arrow:778967880230109185> Please **enter** the size(s) of your product :\n<:example:801551839703072768> *For example, you can enter : `Size M or 8,5/9/9,5 …`*', false)
-                                                                                                                                                        .addField('__**Careful :**__', '<:Warning:778967970394406932> Shoe sizes are **only** in US size\n** ** ** **', false)
+                                                                                                                                                        .addField('__**What to do now ?**__', `<:Arrow:778967880230109185> Please **enter the size(s)** of your product ${i+1} !!\n<:example:801551839703072768> *For example, you can enter : \`Size M or 8,5/9/9,5 …\`*`, false)
+                                                                                                                                                        .addField('__**Careful :**__', '<:Warning:778967970394406932> **Shoe sizes** are **only** in US size\n** ** ** **', false)
                                                                                                                                                         .setTitle(':straight_ruler: __** What Size(s) ?**__')).then(async () => {
                                                                                                                                                         await message.author.dmChannel.awaitMessages(filter, {
                                                                                                                                                                 max: 1,
@@ -634,7 +635,8 @@ module.exports = {
                                                                                                                                                                     .setAuthor(`Product ${i+1} :`)
                                                                                                                                                                     .setDescription('** ** ** **')
                                                                                                                                                                     .setColor('#7901FF')
-                                                                                                                                                                    .addField('__**What to do now ?**__', '<:Arrow:778967880230109185> Please **enter** the condition of your product :\n<:example:801551839703072768> *For example, you can enter : `9,5/10 or DS …`*', false)
+                                                                                                                                                                    .addField('__**What to do now ?**__', `<:Arrow:778967880230109185> Please **enter the condition** of your product ${i+1} !!\n<:example:801551839703072768> *For example, you can enter : \`9,5/10 or DS …\`*`, false)
+                                                                                                                                                                    .addField('__**Careful :**__','<:Warning:778967970394406932> Please **be frank and honest** about the condition of your product :face_with_monocle: !!\n<:Warning:778967970394406932> Do not **hide or lie** about it and **avoid an unnecessary dispute** with your buyer !! ', false) 
                                                                                                                                                                     .addField('__**Tip :**__', '<a:Verified1:778656791332257813> Please check the **reminder down below** to refresh your memory !!', false)
                                                                                                                                                                     .addField('--------------------------------------------------------------------------------------------------', '** ** ** **', false)
                                                                                                                                                                     .addField(':bell: __**Friendly Reminder**__', '**7/10 :** Very Used\n**8/10 :** Used\n**9,5 :** Just tried/Worn Once\n**DS :** Deadstock = Brand New\n**VNDS :** Very near DS\n** ** ** **', false)
@@ -652,8 +654,8 @@ module.exports = {
                                                                                                                                                                                 .setAuthor(`Product ${i+1} :`)
                                                                                                                                                                                 .setColor('#7901FF')
                                                                                                                                                                                 .setDescription('** ** ** **')
-                                                                                                                                                                                .addField('__**What to do now ?**__', '<:Arrow:778967880230109185> Please **enter** the price of your product :\n<:example:801551839703072768> *For example, you can enter : `500€ / 450£ …`*', false)
-                                                                                                                                                                                .addField('__**Careful :**__', '<:Warning:778967970394406932> Prices are **only** in euros **€** :euro: or Pounds **£** :pound: !!!\n<:Warning:778967970394406932> Don’t forget to **specify** your **currency** :globe_with_meridians: !!!\n** ** ** **', false)
+                                                                                                                                                                                .addField('__**What to do now ?**__', `<:Arrow:778967880230109185> Please **enter the price** of your product ${i+1} :\n<:example:801551839703072768> *For example, you can enter : \`500€ / 450£ …\`*`, false)
+                                                                                                                                                                                .addField('__**Careful :**__', '<:Warning:778967970394406932> **Prices** are **only** in euros **€** :euro: or Pounds **£** :pound: !!!\n<:Warning:778967970394406932> Don’t forget to **specify** your **currency** :globe_with_meridians: !!!\n** ** ** **', false)
                                                                                                                                                                                 .setTitle(' <:cash:782230505356787752> __**What Price ?**__')).then(async () => {
                                                                                                                                                                                 await message.author.dmChannel.awaitMessages(filter, {
                                                                                                                                                                                         max: 1,
@@ -695,7 +697,7 @@ module.exports = {
                                                                                                                             .addField(':eagle: __**I Accept :**__', payMethods, true)
                                                                                                                             .addField('<:cargo:801212710377095168> __**Firm Price ?**__', answers[3], true)
                                                                                                                             .addField(':cactus: __**Shipping Fees :**__', `${answers[4]}`, true)
-                                                                                                                            .setColor('#0047FF')
+                                                                                                                            .setColor('#FF0000')
                                                                                                                         embed.addField('————————————————————————————————————', '** ** ** **', false)
                                                                                                                         let i = 5
                                                                                                                         for (let o = 0; o < qty; o++) {
