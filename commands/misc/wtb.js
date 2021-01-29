@@ -22,7 +22,7 @@ module.exports = {
                     .setTitle('<:takemymoney:780556014398472192> __**Wanna Buy ?**__')
                     .setColor('#7901FF')
                     .addField(' __**How does it work ?**__', '<:Arrow:778967880230109185> Please **answer** or **react** to **all questions** to create the post.\n<:Bot1:779069769856057384> **The bot will now ask you some details about your post !!!**', false)
-                    .addField('__**Careful ?**__', '<:Warning:778967970394406932> **You have 90 secs to answer each question !!!**', false)
+                    .addField('__**Careful :**__', '<:Warning:778967970394406932> **You have 90 secs to answer each question !!!**', false)
                     .addField('__**Notes :**__', '<a:Verified1:778656791332257813> Remember that, **the more details** you provide to your post, **the better are** your chances to sell/buy/trade your product(s) !!!\n** ** ** **\n** ** ** **', false)
                     .addField('Please react with 🛒 to start !!!', '** ** ** **', false)
                     .setDescription(`<a:Hi:792339295238094859> Hi <@${message.author.id}>, thank you for creating a post with The S-Mart !!!\nNeed some <:Help:778973470792876032>, come open a ticket in <#778302895526903818> !!\n** ** ** **`))
