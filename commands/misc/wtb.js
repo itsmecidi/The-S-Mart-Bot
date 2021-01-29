@@ -14,7 +14,7 @@ module.exports = {
         let embed = new MessageEmbed()
             .setAuthor(`${message.author.tag}`, message.author.avatarURL())
             .setTitle('<:takemymoney:780556014398472192> **__: WTB WTB WTB  :__** <:takemymoney:780556014398472192>')
-            .setFooter(`by ${message.author.id} | Powered by The S-Mart`, client.user.displayAvatarURL())
+            .setFooter('Powered by The S-Mart', client.user.displayAvatarURL())
             .setDescription(`**Posted by** <@${message.author.id}> | DM for more infos :envelope_with_arrow:\n-----------------------------------------------------------------------------------------------`)
             .setTimestamp()
         try {
@@ -375,7 +375,7 @@ module.exports = {
                                                                                                 .addField('**Zelle :**','<:zelle:802510618309296128>', true)
                                                                                                 .addField('**Apple Pay :**','<:applepay:779106425858555944>', true)
                                                                                                 .addField('**CashApp :**','<:cashapp:802510618388594688>', true)
-                                                                                                .addField('**Crypto :','<:Bitcoins:802510801746919474>', true)
+                                                                                                .addField('**Crypto :**','<:Bitcoins:802510801746919474>', true)
                                                                                                 .addField('**Bank Transfers :**',':bank:', true)
                                                                                                 .addField('**Chocolate :**',':chocolate_bar:', true)
                                                                                                 .addField('**ALL :**','<:plug1:802516321933197332>', true)                      
@@ -701,7 +701,7 @@ module.exports = {
                                                                                                                             embed.addField(':magic_wand: __**Condition :**__', answers[i], true)
                                                                                                                             i = i + 1
                                                                                                                             embed.addField('<:cash:782230505356787752> __**Price :**__', answers[i], true)
-                                                                                                                            // embed.addField('\u200b', '\u200b', false)
+                                                                                                                            embed.addField('---------------------------------------------------------------------------------------------', '** ** ** **', false)
                                                                                                                             i = i + 1
                                                                                                                         }
                                                                                                                         await message.author.send(embed)
